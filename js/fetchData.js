@@ -14,7 +14,10 @@ $(window).load(function () {
 			$.each(data, function() {
 				var json = this;
 				var display = json.name;
-				var outputHTML = '<h4 data-toggle="tooltip" data-placement="top" title="Active: '+ json.active +'\n Updated: '+ json.updated_at +'"><input type="radio" name="selection" value="'+json.id+'"> <a onclick="loadNewData('+ json.id +')" style="cursor: pointer;" class="white-text">'+ display +'</a></h4>';
+				var outputHTML = '<h4 data-toggle="tooltip" data-placement="top" title="Active: '
+				+ json.active +'\n Updated: '+ json.updated_at +'"><input type="radio" name="selection" value="'
+				+json.id+'"> <a onclick="loadNewData('+ json.id +')" style="cursor: pointer;" class="white-text">'
+				+ display +'</a></h4>';
 				$('#api-data').append(outputHTML);	
 			});
 			loadJQueryStyling();
@@ -36,12 +39,19 @@ function loadNewData(id) {
 				var display;
 				if(arrayPosition >= 3) {
 					display = json.description;
+					var outputHTML = '<h4 data-toggle="tooltip" data-placement="top" title="Updated: '
+					+ json.updated_at +'"><input type="radio" name="selection" value="'
+					+json.id+'"> '+ display +'</h4>';
 				} else {
 					display = json.name;
+					var outputHTML = '<h4 data-toggle="tooltip" data-placement="top" title="Updated: '
+					+ json.updated_at +'"><input type="radio" name="selection" value="'
+					+json.id+'"><a onclick="loadNewData('+ json.id +')" style="cursor: pointer;" class="white-text"> '
+					+ display +'</a></h4>';
 				}
-				var outputHTML = '<h4 data-toggle="tooltip" data-placement="top" title="Updated: '+ json.updated_at +'"><input type="checkbox" name="selection" value="'+json.id+'"><a onclick="loadNewData('+ json.id +')" style="cursor: pointer;" class="white-text"> '+ display +'</a></h4>';
 				$('#api-data').append(outputHTML);
 			});
+			$('#api-data').append('<a href="home.php" class="gray-link">Back</a>');
 			loadJQueryStyling();
 		}
 	});

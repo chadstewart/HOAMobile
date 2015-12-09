@@ -25,7 +25,7 @@
                                     <input type="submit" value="Add Activity" class="btn btn-block login-white-btn">
                                 </div>
                                 <div class="mg-top-5 text-center">
-                                   <a href="index.html" class="gray-link">Back</a>
+                                   <a href="home.php" class="gray-link">Back</a>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
